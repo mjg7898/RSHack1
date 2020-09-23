@@ -1,0 +1,16 @@
+{
+    "hooks": [
+    {
+    "type": "PackageInstall",
+    "requestName": "RSHack"
+    }
+    ],
+    "configuration": {
+    "appConfiguration": {
+    "autoShareWithLicensedUsers": true,
+    "autoShareWithOriginator": true,
+    "deleteAppOnConstructionFailure": true,
+    "values": {}
+    }
+    }
+    }
