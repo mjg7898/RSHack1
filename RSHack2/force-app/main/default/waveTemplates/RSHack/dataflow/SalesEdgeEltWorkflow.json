@@ -1,0 +1,38 @@
+{
+  "notificationLevel": "",
+  "workflowDefinition": {
+    "register_LeadData": {
+      "action": "sfdcRegister",
+      "parameters": {
+        "name": "LeadData",
+        "alias": "${App.Datasets.LeadData_tp.FullyQualifiedName}",
+        "source": "sfdcDigest_Lead"
+      }
+    },
+    "sfdcDigest_Lead": {
+      "action": "sfdcDigest",
+      "parameters": {
+        "fields": [
+          {"name": "State"},
+          {"name": "Email"},
+          {"name": "FirstName"},
+          {"name": "LastName"},
+          {"name": "Industry"},
+          {"name": "Company"}
+        ],
+        "object": "Lead"
+      }
+    }
+  },
+  "_type": "dataflow",
+  "description": "This is the default Salesforce dataflow.",
+  "MasterLabel": "Default Salesforce Dataflow",
+  "nextRun": "",
+  "WorkflowStatus": "Inactive",
+  "isDeletable": false,
+  "longRunningAlertInMins": "",
+  "DataflowType": "USER",
+  "name": "SalesEdgeEltWorkflow",
+  "_url": "/insights/internal_api/v1.0/esObject/workflow//json",
+  "_uid": ""
+}

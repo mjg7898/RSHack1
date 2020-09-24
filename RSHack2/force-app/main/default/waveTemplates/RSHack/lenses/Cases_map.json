@@ -1,0 +1,185 @@
+{
+  "name" : "Cases_map_tp",
+  "label" : "Cases map",
+  "folder" : {
+    "id" : "${App.Folder.Id}"
+  },
+  "visualizationType" : "choropleth",
+  "dateVersion" : 1,
+  "datasets" : [
+    {
+      "id" : "${App.Datasets.Modified_Cases_2_tp.Id}"
+    }
+  ],
+  "xmd" : {
+    "measures" : [ ],
+    "derivedDimensions" : [ ],
+    "organizations" : [ ],
+    "showDetailsDefaultFields" : [ ],
+    "dates" : [ ],
+    "derivedMeasures" : [ ],
+    "dimensions" : [ ]
+  },
+  "state" : {
+    "dataSourceLinks" : [ ],
+    "filters" : [ ],
+    "gridLayouts" : [ ],
+    "layouts" : [ ],
+    "steps" : {
+      "aggregateflex" : {
+        "broadcastFacet" : false,
+        "datasets" : [
+          {
+            "name" : "${App.Datasets.Modified_Cases_2_tp.Name}"
+          }
+        ],
+        "isGlobal" : false,
+        "query" : {
+          "query" : {
+            "columns" : [
+              {
+                "query" : {
+                  "measures" : [
+                    [
+                      "median",
+                      "StatePopul.Population"
+                    ]
+                  ],
+                  "groups" : [
+                    "United_Sta.state"
+                  ]
+                }
+              },
+              {
+                "query" : {
+                  "measures" : [
+                    [
+                      "count",
+                      "*"
+                    ]
+                  ],
+                  "groups" : [
+                    "United_Sta.state"
+                  ],
+                  "formula" : "median('United_Sta.new_case')/median('StatePopul.Population')*1000000"
+                },
+                "header" : "Cases per mil.",
+                "name" : "Per_Capita"
+              }
+            ],
+            "measures" : [
+              [
+                "median",
+                "StatePopul.Population",
+                "A"
+              ],
+              [
+                "count",
+                "*",
+                "Per_Capita"
+              ]
+            ],
+            "groups" : [
+              "United_Sta.state"
+            ]
+          },
+          "version" : -1.0
+        },
+        "receiveFacetSource" : {
+          "mode" : "none",
+          "steps" : [ ]
+        },
+        "selectMode" : "multi",
+        "type" : "aggregateflex",
+        "useGlobal" : true,
+        "visualizationParameters" : {
+          "visualizationType" : "choropleth"
+        }
+      }
+    },
+    "widgets" : {
+      "aggregateflex_chart" : {
+        "parameters" : {
+          "bins" : {
+            "breakpoints" : {
+              "high" : 100,
+              "low" : 0
+            },
+            "bands" : {
+              "high" : {
+                "color" : "#008000",
+                "label" : ""
+              },
+              "low" : {
+                "color" : "#B22222",
+                "label" : ""
+              },
+              "medium" : {
+                "color" : "#ffa500",
+                "label" : ""
+              }
+            }
+          },
+          "legend" : {
+            "descOrder" : false,
+            "showHeader" : true,
+            "show" : true,
+            "customSize" : "auto",
+            "position" : "right-top",
+            "inside" : false
+          },
+          "autoZoom" : false,
+          "highColor" : "#1674D9",
+          "tooltip" : {
+            "showBinLabel" : true,
+            "measures" : "",
+            "showNullValues" : true,
+            "showPercentage" : true,
+            "showDimensions" : true,
+            "showMeasures" : true,
+            "customizeTooltip" : false,
+            "dimensions" : ""
+          },
+          "projectionType" : "AlbersUSA",
+          "lowColor" : "#C5DBF7",
+          "visualizationType" : "choropleth",
+          "exploreLink" : true,
+          "title" : {
+            "fontSize" : 14,
+            "subtitleFontSize" : 11,
+            "label" : "",
+            "align" : "center",
+            "subtitleLabel" : ""
+          },
+          "binValues" : false,
+          "trellis" : {
+            "flipLabels" : false,
+            "showGridLines" : true,
+            "size" : [
+              100,
+              100
+            ],
+            "enable" : false,
+            "type" : "x",
+            "chartsPerLine" : 4
+          },
+          "columnMap" : {
+            "color" : [
+              "Per_Capita"
+            ],
+            "trellis" : [ ],
+            "plots" : [
+              "United_Sta.state"
+            ]
+          },
+          "showActionMenu" : true,
+          "theme" : "wave",
+          "step" : "aggregateflex",
+          "map" : "US States",
+          "applyConditionalFormatting" : true
+        },
+        "type" : "chart"
+      }
+    }
+  }
+}
