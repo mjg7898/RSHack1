@@ -11,7 +11,23 @@
     "measures" : [
       {
         "conditionalFormatting" : { },
-        "field" : "United_Sta_state_1.Per_capita",
+        "field" : "lens_2.C",
+        "format" : {
+          "delimiters" : { },
+          "customFormat" : "[\"#,###\",1]"
+        }
+      },
+      {
+        "conditionalFormatting" : { },
+        "field" : "lens_2.B",
+        "format" : {
+          "delimiters" : { },
+          "customFormat" : "[\"#,###\",1]"
+        }
+      },
+      {
+        "conditionalFormatting" : { },
+        "field" : "lens_3.B",
         "format" : {
           "delimiters" : { },
           "customFormat" : "[\"#,###\",1]"
@@ -27,15 +43,7 @@
       },
       {
         "conditionalFormatting" : { },
-        "field" : "lens_2.C",
-        "format" : {
-          "delimiters" : { },
-          "customFormat" : "[\"#,###\",1]"
-        }
-      },
-      {
-        "conditionalFormatting" : { },
-        "field" : "lens_2.B",
+        "field" : "United_Sta_state_1.Per_capita",
         "format" : {
           "delimiters" : { },
           "customFormat" : "[\"#,###\",1]"
@@ -65,6 +73,17 @@
       },
       {
         "dataset" : {
+          "name" : "${App.Datasets.ModifiedMobility2_tp.Name}"
+        },
+        "dependent" : true,
+        "fields" : [
+          "date"
+        ],
+        "locked" : false,
+        "operator" : ">=<="
+      },
+      {
+        "dataset" : {
           "name" : "${App.Datasets.Modified_Cases_2_tp.Name}"
         },
         "dependent" : true,
@@ -73,6 +92,17 @@
         ],
         "locked" : false,
         "operator" : ">=<="
+      },
+      {
+        "dataset" : {
+          "name" : "${App.Datasets.LeadData_tp.Name}"
+        },
+        "dependent" : true,
+        "fields" : [
+          "State"
+        ],
+        "locked" : false,
+        "operator" : "in"
       }
     ],
     "gridLayouts" : [
@@ -96,10 +126,10 @@
                 }
               },
               {
-                "colspan" : 11,
-                "column" : 0,
+                "colspan" : 7,
+                "column" : 5,
                 "name" : "chart_3",
-                "row" : 1,
+                "row" : 4,
                 "rowspan" : 10,
                 "widgetStyle" : {
                   "borderEdges" : [ ]
@@ -110,14 +140,14 @@
                 "column" : 0,
                 "name" : "container_2",
                 "row" : 1,
-                "rowspan" : 10,
+                "rowspan" : 25,
                 "widgetStyle" : {
                   "borderEdges" : [ ]
                 }
               },
               {
-                "colspan" : 1,
-                "column" : 11,
+                "colspan" : 3,
+                "column" : 9,
                 "name" : "filterpanel_3",
                 "row" : 1,
                 "rowspan" : 3,
@@ -129,6 +159,32 @@
                   ],
                   "borderRadius" : 4,
                   "borderWidth" : 1
+                }
+              },
+              {
+                "colspan" : 4,
+                "column" : 5,
+                "name" : "filterpanel_8",
+                "row" : 1,
+                "rowspan" : 3,
+                "widgetStyle" : {
+                  "backgroundColor" : "#FFFFFF",
+                  "borderColor" : "#E6ECF2",
+                  "borderEdges" : [
+                    "all"
+                  ],
+                  "borderRadius" : 4,
+                  "borderWidth" : 1
+                }
+              },
+              {
+                "colspan" : 5,
+                "column" : 0,
+                "name" : "chart_6",
+                "row" : 1,
+                "rowspan" : 19,
+                "widgetStyle" : {
+                  "borderEdges" : [ ]
                 }
               }
             ]
@@ -169,9 +225,19 @@
                 }
               },
               {
-                "colspan" : 4,
+                "colspan" : 3,
+                "column" : 9,
+                "name" : "table_2",
+                "row" : 1,
+                "rowspan" : 10,
+                "widgetStyle" : {
+                  "borderEdges" : [ ]
+                }
+              },
+              {
+                "colspan" : 2,
                 "column" : 0,
-                "name" : "filterpanel_1",
+                "name" : "filterpanel_9",
                 "row" : 1,
                 "rowspan" : 1,
                 "widgetStyle" : {
@@ -183,40 +249,56 @@
                   "borderRadius" : 4,
                   "borderWidth" : 1
                 }
-              },
+              }
+            ]
+          },
+          {
+            "label" : "Lead Data",
+            "name" : "e19ea319-09d7-45fc-8c0c-6b6131912afd",
+            "navigationHidden" : false,
+            "widgets" : [
               {
-                "colspan" : 3,
-                "column" : 9,
-                "name" : "table_2",
+                "colspan" : 10,
+                "column" : 0,
+                "name" : "table_3",
                 "row" : 1,
                 "rowspan" : 10,
                 "widgetStyle" : {
                   "borderEdges" : [ ]
                 }
-              }
-            ]
-          },
-          {
-            "label" : "Future Mobility Decreases",
-            "name" : "781f60ab-4f54-48a1-b165-a282ece7e793",
-            "navigationHidden" : false,
-            "widgets" : [
+              },
+              {
+                "colspan" : 2,
+                "column" : 10,
+                "name" : "filterpanel_10",
+                "row" : 1,
+                "rowspan" : 4,
+                "widgetStyle" : {
+                  "backgroundColor" : "#FFFFFF",
+                  "borderColor" : "#E6ECF2",
+                  "borderEdges" : [
+                    "all"
+                  ],
+                  "borderRadius" : 4,
+                  "borderWidth" : 1
+                }
+              },
+              {
+                "colspan" : 12,
+                "column" : 0,
+                "name" : "container_3",
+                "row" : 1,
+                "rowspan" : 10,
+                "widgetStyle" : {
+                  "borderEdges" : [ ]
+                }
+              },
               {
                 "colspan" : 12,
                 "column" : 0,
                 "name" : "navigation_1",
                 "row" : 0,
                 "rowspan" : 1,
-                "widgetStyle" : {
-                  "borderEdges" : [ ]
-                }
-              },
-              {
-                "colspan" : 9,
-                "column" : 0,
-                "name" : "chart_1",
-                "row" : 1,
-                "rowspan" : 10,
                 "widgetStyle" : {
                   "borderEdges" : [ ]
                 }
@@ -577,6 +659,155 @@
         "useGlobal" : true,
         "visualizationParameters" : { }
       },
+      "iso_3166_2_code_1" : {
+        "broadcastFacet" : true,
+        "datasets" : [
+          {
+            "name" : "${App.Datasets.ModifiedMobility2_tp.Name}"
+          }
+        ],
+        "isGlobal" : false,
+        "query" : {
+          "query" : {
+            "measures" : [
+              [
+                "median",
+                "retail_and_recreation_percent_change_from_baseline"
+              ]
+            ],
+            "groups" : [
+              "iso_3166_2_code"
+            ],
+            "order" : [
+              [
+                "median_retail_and_recreation_percent_change_from_baseline",
+                {
+                  "ascending" : true
+                }
+              ]
+            ]
+          },
+          "version" : -1.0
+        },
+        "receiveFacetSource" : {
+          "mode" : "all",
+          "steps" : [ ]
+        },
+        "selectMode" : "single",
+        "type" : "aggregateflex",
+        "useGlobal" : true,
+        "visualizationParameters" : {
+          "parameters" : {
+            "autoFitMode" : "keepLabels",
+            "showValues" : true,
+            "bins" : {
+              "breakpoints" : {
+                "high" : 100,
+                "low" : 0
+              },
+              "bands" : {
+                "high" : {
+                  "color" : "#008000",
+                  "label" : ""
+                },
+                "low" : {
+                  "color" : "#B22222",
+                  "label" : ""
+                },
+                "medium" : {
+                  "color" : "#ffa500",
+                  "label" : ""
+                }
+              }
+            },
+            "legend" : {
+              "descOrder" : false,
+              "showHeader" : true,
+              "show" : true,
+              "customSize" : "auto",
+              "position" : "right-top",
+              "inside" : false
+            },
+            "axisMode" : "multi",
+            "tooltip" : {
+              "showBinLabel" : true,
+              "measures" : "",
+              "showNullValues" : true,
+              "showPercentage" : true,
+              "showDimensions" : true,
+              "showMeasures" : true,
+              "customizeTooltip" : false,
+              "dimensions" : ""
+            },
+            "visualizationType" : "hbar",
+            "title" : {
+              "fontSize" : 14,
+              "subtitleFontSize" : 11,
+              "label" : "",
+              "align" : "center",
+              "subtitleLabel" : ""
+            },
+            "binValues" : false,
+            "trellis" : {
+              "flipLabels" : false,
+              "showGridLines" : true,
+              "size" : [
+                100,
+                100
+              ],
+              "enable" : false,
+              "type" : "x",
+              "chartsPerLine" : 4
+            },
+            "columnProperties" : { },
+            "columnMap" : {
+              "trellis" : [ ],
+              "dimensionAxis" : [
+                "iso_3166_2_code"
+              ],
+              "plots" : [
+                "median_retail_and_recreation_percent_change_from_baseline"
+              ]
+            },
+            "showActionMenu" : true,
+            "measureAxis2" : {
+              "sqrtScale" : false,
+              "showTitle" : true,
+              "showAxis" : true,
+              "title" : "",
+              "customDomain" : {
+                "showDomain" : false
+              }
+            },
+            "measureAxis1" : {
+              "sqrtScale" : false,
+              "showTitle" : true,
+              "showAxis" : true,
+              "title" : "",
+              "customDomain" : {
+                "showDomain" : false
+              }
+            },
+            "theme" : "wave",
+            "dimensionAxis" : {
+              "showTitle" : true,
+              "customSize" : "auto",
+              "showAxis" : true,
+              "title" : "",
+              "icons" : {
+                "useIcons" : false,
+                "iconProps" : {
+                  "fit" : "cover",
+                  "column" : "",
+                  "type" : "round"
+                }
+              }
+            },
+            "applyConditionalFormatting" : true
+          },
+          "type" : "chart"
+        }
+      },
       "United_Sta_state_1" : {
         "broadcastFacet" : true,
         "datasets" : [
@@ -625,7 +856,16 @@
                   "groups" : [
                     "United_Sta.state"
                   ],
-                  "formula" : "median('United_Sta.new_case')/median('StatePopul.Population')*1000000"
+                  "formula" : "median('United_Sta.new_case')/median('StatePopul.Population')*1000000",
+                  "order" : [
+                    [
+                      -1,
+                      {
+                        "ascending" : false,
+                        "inner" : true
+                      }
+                    ]
+                  ]
                 },
                 "name" : "Per_capita",
                 "header" : "Cases per Million People"
@@ -633,6 +873,17 @@
             ],
             "groups" : [
               "United_Sta.state"
+            ],
+            "filters" : [
+              [
+                "StatePopul.Population",
+                [
+                  [
+                    1
+                  ]
+                ],
+                ">"
+              ]
             ]
           },
           "version" : -1.0
@@ -846,6 +1097,182 @@
         "useGlobal" : true,
         "visualizationParameters" : { }
       },
+      "lens_3" : {
+        "broadcastFacet" : true,
+        "datasets" : [
+          {
+            "name" : "${App.Datasets.Modified_Cases_2_tp.Name}"
+          },
+          {
+            "name" : "${App.Datasets.ModifiedMobility2_tp.Name}"
+          }
+        ],
+        "isGlobal" : false,
+        "label" : "lens_3",
+        "query" : {
+          "aggregateFilters" : [ ],
+          "limit" : 2000,
+          "orders" : [
+            [
+              "United_Sta.state",
+              {
+                "ascending" : true
+              }
+            ],
+            [
+              "A",
+              {
+                "ascending" : false
+              }
+            ]
+          ],
+          "sourceFilters" : { },
+          "sources" : [
+            {
+              "cogroupType" : "left",
+              "columns" : [
+                {
+                  "field" : [
+                    "count",
+                    "*"
+                  ],
+                  "name" : "A"
+                },
+                {
+                  "formula" : "median('United_Sta.new_case')/median('StatePopul.Population')*1000000",
+                  "name" : "B"
+                }
+              ],
+              "groups" : [
+                "United_Sta.state"
+              ],
+              "name" : "Modified_Cases_2"
+            },
+            {
+              "columns" : [
+                {
+                  "field" : [
+                    "count",
+                    "*"
+                  ],
+                  "name" : "C"
+                }
+              ],
+              "groups" : [
+                "iso_3166_2_code"
+              ],
+              "name" : "ModifiedMobility2"
+            }
+          ]
+        },
+        "receiveFacetSource" : {
+          "mode" : "all",
+          "steps" : [ ]
+        },
+        "selectMode" : "single",
+        "type" : "aggregateflex",
+        "useGlobal" : true,
+        "visualizationParameters" : {
+          "options" : { },
+          "parameters" : {
+            "borderColor" : "#e0e5ee",
+            "borderWidth" : 1,
+            "cell" : {
+              "backgroundColor" : "#ffffff",
+              "fontColor" : "#16325c",
+              "fontSize" : 12
+            },
+            "columnProperties" : { },
+            "columns" : [ ],
+            "customBulkActions" : [ ],
+            "header" : {
+              "backgroundColor" : "#f4f6f9",
+              "fontColor" : "#16325c",
+              "fontSize" : 12
+            },
+            "innerMajorBorderColor" : "#a8b7c7",
+            "innerMinorBorderColor" : "#e0e5ee",
+            "maxColumnWidth" : 300,
+            "minColumnWidth" : 40,
+            "mode" : "variable",
+            "numberOfLines" : 1,
+            "showActionMenu" : true,
+            "showRowIndexColumn" : false,
+            "totals" : true,
+            "verticalPadding" : 8
+          },
+          "type" : "table"
+        }
+      },
+      "lens_4" : {
+        "broadcastFacet" : true,
+        "datasets" : [
+          {
+            "name" : "${App.Datasets.LeadData_tp.Name}"
+          }
+        ],
+        "isGlobal" : false,
+        "label" : "lens_4",
+        "query" : {
+          "query" : {
+            "values" : [
+              "State",
+              "LastName",
+              "Industry",
+              "FirstName",
+              "Company",
+              "Email"
+            ],
+            "order" : [
+              [
+                "State",
+                {
+                  "ascending" : true
+                }
+              ]
+            ]
+          },
+          "version" : -1.0
+        },
+        "receiveFacetSource" : {
+          "mode" : "all",
+          "steps" : [ ]
+        },
+        "selectMode" : "single",
+        "type" : "aggregateflex",
+        "useGlobal" : true,
+        "visualizationParameters" : {
+          "options" : { },
+          "parameters" : {
+            "borderColor" : "#e0e5ee",
+            "borderWidth" : 1,
+            "cell" : {
+              "backgroundColor" : "#ffffff",
+              "fontColor" : "#16325c",
+              "fontSize" : 12
+            },
+            "columnProperties" : { },
+            "columns" : [ ],
+            "customBulkActions" : [ ],
+            "header" : {
+              "backgroundColor" : "#f4f6f9",
+              "fontColor" : "#16325c",
+              "fontSize" : 12
+            },
+            "innerMajorBorderColor" : "#a8b7c7",
+            "innerMinorBorderColor" : "#e0e5ee",
+            "maxColumnWidth" : 300,
+            "minColumnWidth" : 40,
+            "mode" : "variable",
+            "numberOfLines" : 1,
+            "showActionMenu" : true,
+            "showRowIndexColumn" : true,
+            "totals" : true,
+            "verticalPadding" : 8
+          },
+          "type" : "table"
+        }
+      },
       "lens_1" : {
         "broadcastFacet" : true,
         "datasets" : [
@@ -1032,6 +1459,75 @@
       "borderWidth" : 1
     },
     "widgets" : {
+      "navigation_4" : {
+        "parameters" : {
+          "fontSize" : 16,
+          "selectedTab" : {
+            "backgroundColor" : "#FFFFFF",
+            "borderColor" : "#0070D2",
+            "borderEdges" : [
+              "bottom"
+            ],
+            "borderWidth" : 2,
+            "textColor" : "#0070D2"
+          },
+          "tabCount" : 5,
+          "textColor" : "#54698D"
+        },
+        "type" : "navigation"
+      },
+      "filterpanel_10" : {
+        "parameters" : {
+          "filterItemOptions" : {
+            "propertyColor" : "#54698D",
+            "valueColor" : "#16325C"
+          },
+          "filters" : [
+            {
+              "dataset" : {
+                "name" : "${App.Datasets.LeadData_tp.Name}"
+              },
+              "field" : "State"
+            }
+          ],
+          "showAllFilters" : false
+        },
+        "type" : "filterpanel"
+      },
+      "navigation_2" : {
+        "parameters" : {
+          "fontSize" : 16,
+          "selectedTab" : {
+            "backgroundColor" : "#FFFFFF",
+            "borderColor" : "#0070D2",
+            "borderEdges" : [
+              "bottom"
+            ],
+            "borderWidth" : 2,
+            "textColor" : "#0070D2"
+          },
+          "tabCount" : 5,
+          "textColor" : "#54698D"
+        },
+        "type" : "navigation"
+      },
+      "navigation_1" : {
+        "parameters" : {
+          "fontSize" : 16,
+          "selectedTab" : {
+            "backgroundColor" : "#FFFFFF",
+            "borderColor" : "#0070D2",
+            "borderEdges" : [
+              "bottom"
+            ],
+            "borderWidth" : 2,
+            "textColor" : "#0070D2"
+          },
+          "tabCount" : 5,
+          "textColor" : "#54698D"
+        },
+        "type" : "navigation"
+      },
       "table_2" : {
         "parameters" : {
           "borderColor" : "#e0e5ee",
@@ -1068,22 +1564,73 @@
         },
         "type" : "table"
       },
-      "navigation_4" : {
+      "filterpanel_9" : {
         "parameters" : {
-          "fontSize" : 16,
-          "selectedTab" : {
-            "backgroundColor" : "#FFFFFF",
-            "borderColor" : "#0070D2",
-            "borderEdges" : [
-              "bottom"
-            ],
-            "borderWidth" : 2,
-            "textColor" : "#0070D2"
+          "filterItemOptions" : {
+            "propertyColor" : "#54698D",
+            "valueColor" : "#16325C"
           },
-          "tabCount" : 5,
-          "textColor" : "#54698D"
+          "filters" : [
+            {
+              "dataset" : {
+                "name" : "${App.Datasets.Modified_Cases_2_tp.Name}"
+              },
+              "field" : "United_Sta.submission_date"
+            }
+          ],
+          "showAllFilters" : false
         },
-        "type" : "navigation"
+        "type" : "filterpanel"
+      },
+      "table_3" : {
+        "parameters" : {
+          "borderColor" : "#e0e5ee",
+          "borderWidth" : 1,
+          "cell" : {
+            "backgroundColor" : "#ffffff",
+            "fontColor" : "#16325c",
+            "fontSize" : 12
+          },
+          "columnProperties" : { },
+          "columns" : [ ],
+          "customBulkActions" : [ ],
+          "exploreLink" : true,
+          "header" : {
+            "backgroundColor" : "#f4f6f9",
+            "fontColor" : "#16325c",
+            "fontSize" : 12
+          },
+          "innerMajorBorderColor" : "#a8b7c7",
+          "innerMinorBorderColor" : "#e0e5ee",
+          "maxColumnWidth" : 300,
+          "minColumnWidth" : 40,
+          "mode" : "variable",
+          "numberOfLines" : 1,
+          "showActionMenu" : true,
+          "showRowIndexColumn" : true,
+          "step" : "lens_4",
+          "totals" : true,
+          "verticalPadding" : 8
+        },
+        "type" : "table"
+      },
+      "filterpanel_8" : {
+        "parameters" : {
+          "filterItemOptions" : {
+            "propertyColor" : "#54698D",
+            "valueColor" : "#16325C"
+          },
+          "filters" : [
+            {
+              "dataset" : {
+                "name" : "${App.Datasets.ModifiedMobility2_tp.Name}"
+              },
+              "field" : "date"
+            }
+          ],
+          "showAllFilters" : false
+        },
+        "type" : "filterpanel"
       },
       "container_1" : {
         "parameters" : {
@@ -1094,6 +1641,14 @@
         "type" : "container"
       },
       "container_2" : {
+        "parameters" : {
+          "alignmentX" : "left",
+          "alignmentY" : "top",
+          "fit" : "original"
+        },
+        "type" : "container"
+      },
+      "container_3" : {
         "parameters" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
@@ -1119,40 +1674,119 @@
         },
         "type" : "filterpanel"
       },
-      "filterpanel_1" : {
+      "chart_6" : {
         "parameters" : {
-          "filterItemOptions" : {
-            "propertyColor" : "#54698D",
-            "valueColor" : "#16325C"
-          },
-          "filters" : [
-            {
-              "dataset" : {
-                "name" : "${App.Datasets.Modified_Cases_2_tp.Name}"
+          "autoFitMode" : "keepLabels",
+          "showValues" : true,
+          "bins" : {
+            "breakpoints" : {
+              "high" : 100,
+              "low" : 0
+            },
+            "bands" : {
+              "high" : {
+                "color" : "#008000",
+                "label" : ""
               },
-              "field" : "United_Sta.submission_date"
+              "low" : {
+                "color" : "#B22222",
+                "label" : ""
+              },
+              "medium" : {
+                "color" : "#ffa500",
+                "label" : ""
+              }
             }
-          ],
-          "showAllFilters" : false
-        },
-        "type" : "filterpanel"
-      },
-      "navigation_2" : {
-        "parameters" : {
-          "fontSize" : 16,
-          "selectedTab" : {
-            "backgroundColor" : "#FFFFFF",
-            "borderColor" : "#0070D2",
-            "borderEdges" : [
-              "bottom"
-            ],
-            "borderWidth" : 2,
-            "textColor" : "#0070D2"
           },
-          "tabCount" : 5,
-          "textColor" : "#54698D"
+          "legend" : {
+            "descOrder" : false,
+            "showHeader" : true,
+            "show" : true,
+            "customSize" : "auto",
+            "position" : "top-center",
+            "inside" : false
+          },
+          "axisMode" : "multi",
+          "tooltip" : {
+            "showBinLabel" : true,
+            "measures" : "",
+            "showNullValues" : true,
+            "showPercentage" : true,
+            "showDimensions" : true,
+            "showMeasures" : true,
+            "customizeTooltip" : false,
+            "dimensions" : ""
+          },
+          "visualizationType" : "hbar",
+          "title" : {
+            "fontSize" : 14,
+            "subtitleFontSize" : 11,
+            "label" : "",
+            "align" : "center",
+            "subtitleLabel" : ""
+          },
+          "binValues" : false,
+          "trellis" : {
+            "flipLabels" : false,
+            "showGridLines" : true,
+            "size" : [
+              100,
+              100
+            ],
+            "enable" : false,
+            "type" : "x",
+            "parameters" : { },
+            "chartsPerLine" : 4
+          },
+          "columnProperties" : { },
+          "columnMap" : {
+            "trellis" : [ ],
+            "dimensionAxis" : [
+              "iso_3166_2_code"
+            ],
+            "plots" : [
+              "median_retail_and_recreation_percent_change_from_baseline"
+            ]
+          },
+          "showActionMenu" : true,
+          "measureAxis2" : {
+            "sqrtScale" : false,
+            "showTitle" : true,
+            "showAxis" : true,
+            "title" : "",
+            "customDomain" : {
+              "showDomain" : false
+            }
+          },
+          "measureAxis1" : {
+            "sqrtScale" : false,
+            "showTitle" : true,
+            "showAxis" : true,
+            "title" : "",
+            "customDomain" : {
+              "showDomain" : false
+            }
+          },
+          "theme" : "wave",
+          "step" : "iso_3166_2_code_1",
+          "dimensionAxis" : {
+            "showTitle" : true,
+            "customSize" : "auto",
+            "showAxis" : true,
+            "title" : "",
+            "icons" : {
+              "useIcons" : false,
+              "iconProps" : {
+                "fit" : "cover",
+                "column" : "",
+                "type" : "round",
+                "parameters" : { }
+              }
+            }
+          },
+          "applyConditionalFormatting" : true
         },
-        "type" : "navigation"
+        "type" : "chart"
       },
       "chart_2" : {
         "parameters" : {
@@ -1237,128 +1871,6 @@
         },
         "type" : "chart"
       },
-      "navigation_1" : {
-        "parameters" : {
-          "fontSize" : 16,
-          "selectedTab" : {
-            "backgroundColor" : "#FFFFFF",
-            "borderColor" : "#0070D2",
-            "borderEdges" : [
-              "bottom"
-            ],
-            "borderWidth" : 2,
-            "textColor" : "#0070D2"
-          },
-          "tabCount" : 5,
-          "textColor" : "#54698D"
-        },
-        "type" : "navigation"
-      },
-      "chart_1" : {
-        "parameters" : {
-          "autoFitMode" : "keepLabels",
-          "showValues" : true,
-          "bins" : {
-            "breakpoints" : {
-              "high" : 100,
-              "low" : 0
-            },
-            "bands" : {
-              "high" : {
-                "color" : "#008000",
-                "label" : ""
-              },
-              "low" : {
-                "color" : "#B22222",
-                "label" : ""
-              },
-              "medium" : {
-                "color" : "#ffa500",
-                "label" : ""
-              }
-            }
-          },
-          "legend" : {
-            "descOrder" : false,
-            "showHeader" : true,
-            "show" : true,
-            "customSize" : "auto",
-            "position" : "right-top",
-            "inside" : false
-          },
-          "axisMode" : "multi",
-          "tooltip" : {
-            "showBinLabel" : true,
-            "measures" : "",
-            "showNullValues" : true,
-            "showPercentage" : true,
-            "showDimensions" : true,
-            "showMeasures" : true,
-            "customizeTooltip" : false,
-            "dimensions" : ""
-          },
-          "visualizationType" : "hbar",
-          "exploreLink" : true,
-          "title" : {
-            "fontSize" : 14,
-            "subtitleFontSize" : 11,
-            "label" : "",
-            "align" : "center",
-            "subtitleLabel" : ""
-          },
-          "binValues" : false,
-          "trellis" : {
-            "flipLabels" : false,
-            "showGridLines" : true,
-            "size" : [
-              100,
-              100
-            ],
-            "enable" : false,
-            "type" : "x",
-            "parameters" : { },
-            "chartsPerLine" : 4
-          },
-          "showActionMenu" : true,
-          "measureAxis2" : {
-            "sqrtScale" : false,
-            "showTitle" : true,
-            "showAxis" : true,
-            "title" : "",
-            "customDomain" : {
-              "showDomain" : false
-            }
-          },
-          "measureAxis1" : {
-            "sqrtScale" : false,
-            "showTitle" : true,
-            "showAxis" : true,
-            "title" : "",
-            "customDomain" : {
-              "showDomain" : false
-            }
-          },
-          "theme" : "wave",
-          "step" : "lens_2",
-          "dimensionAxis" : {
-            "showTitle" : true,
-            "customSize" : "auto",
-            "showAxis" : true,
-            "title" : "",
-            "icons" : {
-              "useIcons" : false,
-              "iconProps" : {
-                "fit" : "cover",
-                "column" : "",
-                "type" : "round",
-                "parameters" : { }
-              }
-            }
-          },
-          "applyConditionalFormatting" : true
-        },
-        "type" : "chart"
-      },
       "chart_3" : {
         "parameters" : {
           "showPoints" : false,
@@ -1404,8 +1916,8 @@
             "flipLabels" : false,
             "showGridLines" : true,
             "size" : [
-              100,
-              100
+              150,
+              80
             ],
             "enable" : true,
             "type" : "x",

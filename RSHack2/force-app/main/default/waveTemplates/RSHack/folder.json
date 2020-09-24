@@ -3,5 +3,10 @@
   "label" : "RSHack",
   "description" : "Analytics template with one simple dashboard",
   "featuredAssets" : { },
-  "shares" : [ ]
+  "shares": [
+    {
+      "accessType": "View",
+      "shareType": "Organization"
+    }
+  ]
 }

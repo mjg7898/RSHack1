@@ -17,34 +17,21 @@
     }
   ],
   "releaseInfo" : {
-    "templateVersion" : "1.34",
+    "templateVersion" : "1.19",
     "notesFile" : "releaseNotes.html"
   },
   "folderDefinition" : "folder.json",
   "externalFiles" : [ ],
-  "lenses" : [
-    {
-      "label" : "Cases map",
-      "name" : "Cases_map_tp",
-      "condition" : "${Variables.Overrides.createAllLenses}",
-      "file" : "lenses/Cases_map.json"
-    }
-  ],
+  "lenses" : [ ],
   "dashboards" : [
     {
       "label" : "RSHackDashboard",
       "name" : "RSHackDashboard_tp",
-      "condition" : "${Variables.Overrides.createAllDashboards}",
+      "condition" : "${Variables.Overr ides.createAllDashboards}",
       "file" : "dashboards/RSHackDashboard.json"
     }
   ],
   "eltDataflows" : [
-    {
-      "label" : "Default Salesforce Dataflow",
-      "name" : "SalesEdgeEltWorkflow",
-      "condition" : "${Variables.Overrides.createDataflow}",
-      "file" : "dataflow/SalesEdgeEltWorkflow.json"
-    },
     {
       "label" : "Default Salesforce Dataflow",
       "name" : "SalesEdgeEltWorkflow",
@@ -59,18 +46,6 @@
       "name" : "LeadData_tp",
       "condition" : "${Variables.Overrides.createAllDatasetFiles}",
       "userXmd" : "dataset_files/LeadData_XMD.json"
-    },
-    {
-      "label" : "Modified Cases 2",
-      "name" : "Modified_Cases_2_tp",
-      "condition" : "${Variables.Overrides.createAllDatasetFiles}",
-      "userXmd" : "dataset_files/Modified_Cases_2_XMD.json"
-    },
-    {
-      "label" : "Modified Mobility",
-      "name" : "Modified_Mobility_tp",
-      "condition" : "${Variables.Overrides.createAllDatasetFiles}",
-      "userXmd" : "dataset_files/Modified_Mobility_XMD.json"
     }
   ],
   "storedQueries" : [ ],
